@@ -7,7 +7,6 @@ header{
 }
 .navbar-toggler{
   margin-left: auto;
-  width: auto;
   padding: 0;
   cursor: pointer;
   .fa{
@@ -30,9 +29,6 @@ header{
     padding: 5px;
     color: gray;
   }
-}
-.navbar-nav{
-  width: 100%;
 }
 .nav-item {
   a{
@@ -68,6 +64,7 @@ header{
   &-img-box{
     display: flex;
     justify-content: space-around;
+	  padding-left: 30px;
     &-img{
       @include media-breakpoint-down(xs) {
         width: 280px;
@@ -75,13 +72,17 @@ header{
       }
     }
   }
-  &-caption-box h1{
+  &-caption-box {
+	  @include media-breakpoint-up(md){
+		  margin-left: 50px;
+	  }
+	  h1{
     @include media-breakpoint-down(md){
       margin: 20px 0 ;
       font-size: 30px;
     }
   }
-}
+}}
 .download-btn {
   list-style: none;
   display: flex;
@@ -91,7 +92,7 @@ header{
   .btn-box{
     width: calc(33.3% - 10px);
     min-width: 150px;
-    margin: 5px;
+    margin: 5px 5px 5px 0;
     flex-grow: 1;
   .btn {
     color: white;
@@ -130,7 +131,6 @@ header{
     }
   }
 }
-
 #service {
 	padding:30px 0;
 	.service-wrapper {
@@ -186,7 +186,6 @@ header{
 		}
 	}
 }
-
 #feature {
 	padding:120px 0;
 	.title {
@@ -225,22 +224,11 @@ header{
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
 #utility {
 	background: #f6f6f7;
-	padding:20px 0 30px 0;
-
+	padding-top: 50px;
 	.block {
 		h2 {
-			padding-top: 70px;
 			color: #444;
 		}
 		p {
@@ -252,12 +240,9 @@ header{
 	}
 }
 #utility-2 {
-	padding:40px 0 10px 0;
-
+	padding-top: 50px;
 	.block {
-		padding-top: 100px;
 		h2 {
-
 			color: #666;
 		}
 		p {
@@ -265,12 +250,10 @@ header{
 			color: #9AA0A9;
 			font-size: 16px;
 		}
-
 	}
 }
-
 #subscribe {
-	padding:70px 0;
+	padding:50px 0;
 	.block {
 		border-top: 1px solid #dedede;
 		padding-top: 40px;
@@ -280,22 +263,21 @@ header{
 		color: #96908E;
 	}
 	.form-inline {
-		padding-top: 16px;
-		.form-group {
-			position: relative;
+		margin:auto;
 			input {
-				width: 340px;
-				padding: 20px 0px 20px 15px;
+				width: calc(100% - 60px);
 				border-radius: 0;
 				background: white;
-				border: 1px solid #d4d4d4;
 				border:1px solid #d1d1d1;
+				box-sizing: border-box;
+				padding: 5px;
+				height: 45px;
 				box-shadow: none;
   				&:hover,&:active,&:focus {
   					box-shadow: none;
+					outline: none;
   				}
   			}
-		}
 		i {
 			font-size: 18px;
 			color: #fff;
@@ -307,27 +289,27 @@ header{
 		padding:10px 20px;
 		color: #fff;
 		border-radius: 0;
+		height: 45px;
+		box-sizing: border-box;
+		cursor: pointer;
 		border:none;
 		margin-left: -4px;
-		border:1px solid transparent;
 		-webkit-transition: .2s all;
 		-o-transition: .2s all;
 		transition: .2s all;
+		&:hover,&:active,&:focus {
+			box-shadow: none;
+			outline: none;
+		}
 		&:hover {
 			background: #fff;
 			border:1px solid #77c344;
-
 		}
 		&:hover i {
 			color: #77c344;
 		}
 	}
 }
-
-
-
-
-
 footer {
 	background: #f9f9f9;
 	border-top: 1px solid #e8e8e8;
